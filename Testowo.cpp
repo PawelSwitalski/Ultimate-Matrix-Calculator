@@ -5,7 +5,7 @@
 #include <iostream>
 
 //template <typename T> 
-
+//g
 class Regular_Matrix{
 
 	std::vector<std::vector<double>>VEC;
