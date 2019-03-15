@@ -5,11 +5,11 @@
 #include <iostream>
 
 //template <typename T> 
-
+//g
 class Regular_Matrix{
 
 	std::vector<std::vector<double>>VEC;
-	unsigned int rows;
+    unsigned int rows;
 	unsigned int columns;	
 
 	public:
@@ -34,9 +34,9 @@ double Matrix_V = 0;
 std::cin >> Matrix_1;
 
 std::cout << "\n"; 
-	for(int i=0; i<this->rows; ++i){
+	for(int i=0; i<rows; ++i){
 		std::vector<double>temp;
-			for(int j=0; j<this->columns; ++j){
+			for(int j=0; j<columns; ++j){
 				std::cout << "Value of M" <<"["<< i+1 << "," << j+1 << "]" << " -> ";
 				std::cin >> Matrix_V;
 				temp.push_back(Matrix_V);
@@ -47,12 +47,19 @@ std::cout << "\n";
 
 void Regular_Matrix::Display()const{
 	std::cout << "\n";
-	for(int i = 0; i<VEC.size(); ++i){
-		std::cout << "| ";  // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
-		for(int j=0; j<VEC[i].size(); ++j){
-			std::cout << VEC[i][j] << " ";
-		}
-		std::cout << "|";   // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
+	  
+      int indexR = 0;
+      int indexC = 0;    
+      std::vector<std::vector<double>>::const_iterator N_rows;
+      std::vector<double>::const_iterator N_columns;
+
+
+      for(N_rows = VEC.begin(), indexR; N_rows != VEC.end(); ++N_rows, ++indexR){
+          std::cout << "| ";  // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
+		for(N_columns = N_rows -> begin(), indexC; N_columns != N_rows->end(); ++N_columns, ++indexC){
+            std::cout << *N_columns << " ";
+          }
+        std::cout << "|";   // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
 		std::cout << "\n";
 		}
 	std::cout << "\n";
