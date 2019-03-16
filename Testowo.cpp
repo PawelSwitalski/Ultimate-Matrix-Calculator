@@ -20,9 +20,9 @@ class Regular_Matrix{
 		~Regular_Matrix(){}
 		friend std::istream &operator>> (std::istream &input, Regular_Matrix &I){
 			std::cout << "Rows -> ";
-			input >> I.rows;
+			  input >> I.rows;
 			std::cout << "Columns -> ";
-			input >> I.columns;
+			  input >> I.columns;
 			return input;
 		}
 
@@ -46,23 +46,22 @@ std::cout << "\n";
 }
 
 void Regular_Matrix::Display()const{
-	std::cout << "\n";
+	
+      std::cout << "\n";
 	  
-      int indexR = 0;
-      int indexC = 0;    
       std::vector<std::vector<double>>::const_iterator N_rows;
       std::vector<double>::const_iterator N_columns;
 
 
-      for(N_rows = VEC.begin(), indexR; N_rows != VEC.end(); ++N_rows, ++indexR){
-          std::cout << "| ";  // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
-		for(N_columns = N_rows -> begin(), indexC; N_columns != N_rows->end(); ++N_columns, ++indexC){
-            std::cout << *N_columns << " ";
+      for(N_rows = VEC.begin(); N_rows != VEC.end(); ++N_rows){
+            std::cout << "| ";  // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
+		for(N_columns = N_rows -> begin(); N_columns != N_rows->end(); ++N_columns){
+              std::cout << *N_columns << " ";
           }
-        std::cout << "|";   // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
-		std::cout << "\n";
+            std::cout << "|";   // Kosmetycznie, odpowiada za te paski przy wyswietlaniu
+	      std::cout << "\n";
 		}
-	std::cout << "\n";
+	  std::cout << "\n";
 }
 
 //int Regular_Matrix::Menu(const std::string & message){
